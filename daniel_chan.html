@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Countdown to March 29, 2026</title>
+
+<style>
+body{
+    margin:0;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-family:Arial, Helvetica, sans-serif;
+    background:linear-gradient(135deg,#1e3c72,#2a5298);
+    color:white;
+}
+
+.container{
+    text-align:center;
+}
+
+h1{
+    font-size:40px;
+    margin-bottom:40px;
+}
+
+.timer{
+    display:flex;
+    gap:25px;
+    justify-content:center;
+}
+
+.box{
+    background:rgba(255,255,255,0.1);
+    padding:20px 30px;
+    border-radius:10px;
+    backdrop-filter:blur(5px);
+}
+
+.number{
+    font-size:50px;
+    font-weight:bold;
+}
+
+.label{
+    font-size:14px;
+    opacity:0.8;
+}
+</style>
+</head>
+
+<body>
+<div class="container" >
+    <div style="font-size: 80px; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">DANIEL WAKE UP!!!!!!!!!!!</div>
+
+    <h1>Countdown to March 29, 2026</h1>
+
+    <div class="timer">
+        <div class="box">
+            <div id="days" class="number">0</div>
+            <div class="label">Days</div>
+        </div>
+
+        <div class="box">
+            <div id="hours" class="number">0</div>
+            <div class="label">Hours</div>
+        </div>
+
+        <div class="box">
+            <div id="minutes" class="number">0</div>
+            <div class="label">Minutes</div>
+        </div>
+
+        <div class="box">
+            <div id="seconds" class="number">0</div>
+            <div class="label">Seconds</div>
+        </div>
+    </div>
+<iframe style="margin: 5%;" 
+width="560" 
+height="315" 
+src="https://www.youtube.com/embed/NAUSoti82m8?autoplay=1&mute=0&loop=1&playlist=NAUSoti82m8" 
+title="YouTube video player" 
+frameborder="0" 
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+referrerpolicy="strict-origin-when-cross-origin" 
+allowfullscreen>
+</iframe></div>
+
+<script>
+
+const targetDate = new Date("March 29, 2026 00:00:00").getTime();
+
+function updateCountdown(){
+
+    const now = new Date().getTime();
+    const diff = targetDate - now;
+
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff % (1000*60*60*24)) / (1000*60*60));
+    const minutes = Math.floor((diff % (1000*60*60)) / (1000*60));
+    const seconds = Math.floor((diff % (1000*60)) / 1000);
+
+    document.getElementById("days").innerText = days;
+    document.getElementById("hours").innerText = hours;
+    document.getElementById("minutes").innerText = minutes;
+    document.getElementById("seconds").innerText = seconds;
+
+}
+
+setInterval(updateCountdown,1000);
+updateCountdown();
+
+</script>
+
+</body>
+</html>
